@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MapApplication</string>
+
+    <!--
+        GPS fix summary — shown as a Toast whenever a new location arrives.
+        %1$f = latitude, %2$f = longitude, %3$f = altitude (m), %4$f = accuracy (m)
+    -->
+    <string name="new_location">
+        📍 Lat: %1$.5f  |  Lon: %2$.5f\nAlt: %3$.1f m  |  Accuracy: ±%4$.1f m
+    </string>
+</resources>

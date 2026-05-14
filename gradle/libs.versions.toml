@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# libs.versions.toml  —  Version Catalog for MapApplication
+# All dependency versions are declared here to keep build.gradle.kts clean.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[versions]
+# AndroidX & Material
+agp = "8.3.0"
+appcompat = "1.6.1"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+material = "1.11.0"
+
+# Networking
+volley = "1.2.1"
+
+# Mapping (OSMDroid)
+osmdroid = "6.1.17"
+
+# Testing
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+
+[libraries]
+# ── AndroidX ──────────────────────────────────────────────────────────────────
+appcompat           = { group = "androidx.appcompat",       name = "appcompat",            version.ref = "appcompat"       }
+material            = { group = "com.google.android.material", name = "material",           version.ref = "material"        }
+activity            = { group = "androidx.activity",        name = "activity",             version.ref = "activity"        }
+constraintlayout    = { group = "androidx.constraintlayout", name = "constraintlayout",    version.ref = "constraintlayout"}
+
+# ── Networking ────────────────────────────────────────────────────────────────
+volley              = { group = "com.android.volley",       name = "volley",               version.ref = "volley"          }
+
+# ── Mapping ───────────────────────────────────────────────────────────────────
+# Both libs.maps.core and libs.osmdroid point to the osmdroid artifact.
+# maps-core gives us GeoPoint, BoundingBox, and other core geometry classes.
+maps-core           = { group = "org.osmdroid",             name = "osmdroid-android",     version.ref = "osmdroid"        }
+osmdroid            = { group = "org.osmdroid",             name = "osmdroid-android",     version.ref = "osmdroid"        }
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+junit               = { group = "junit",                    name = "junit",                version.ref = "junit"           }
+ext-junit           = { group = "androidx.test.ext",        name = "junit",                version.ref = "junitVersion"    }
+espresso-core       = { group = "androidx.test.espresso",   name = "espresso-core",        version.ref = "espressoCore"    }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

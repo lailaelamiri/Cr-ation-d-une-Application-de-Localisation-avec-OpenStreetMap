@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_map_screen_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GoogleMapActivity">
+
+    <!--
+        OSMDroid MapView — fills the entire screen edge to edge.
+        ConstraintLayout is kept as the parent so we can later overlay
+        UI controls (FABs, info cards, search bars) without restructuring.
+        No explicit constraints needed on the MapView itself since
+        match_parent on both dimensions already fills the available space.
+    -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/osm_map_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

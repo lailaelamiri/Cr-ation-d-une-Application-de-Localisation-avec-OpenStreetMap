@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    network_security_config.xml — MapApplication
+
+    Android 9+ (API 28) blocks all cleartext (HTTP) traffic by default.
+    During local development we need to reach our backend running on the
+    host machine, so we carve out a specific exception for it.
+
+    ┌─────────────────────────────────────────────────────────────┐
+    │  10.0.2.2  =  the Android emulator's alias for localhost    │
+    │              (equivalent to 127.0.0.1 on the host PC)       │
+    └─────────────────────────────────────────────────────────────┘
+
+    ⚠️  This exemption is intentionally narrow — only that one IP is
+    allowed to use HTTP. All other traffic still requires HTTPS.
+    Before shipping to production, replace the local server with a
+    properly TLS-secured endpoint and remove this file or tighten it.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Allow HTTP to the emulator host (local dev server only) -->
+        <domain includeSubdomains="true">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>
